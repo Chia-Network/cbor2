@@ -42,10 +42,11 @@ else:
 
 
 setup(
-    use_scm_version={
-        'version_scheme': 'post-release',
-        'local_scheme': 'dirty-tag'
-    },
+    # use_scm_version={
+    #    'version_scheme': 'post-release',
+    #    'local_scheme': 'dirty-tag'
+    # },
+    version="5.1.0",
     setup_requires=[
         'setuptools >= 40.7.0',
         'setuptools_scm >= 1.7.0'
