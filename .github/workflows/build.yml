@@ -52,8 +52,8 @@ jobs:
           python -m pip install --upgrade pip
         CIBW_TEST_REQUIRES: pytest pytest-cov
         # CIBW_BEFORE_TEST: ln -s {project}/tests tests
-        CIBW_BEFORE_TEST_WINDOWS: ls -al tests && pwd
-        CIBW_TEST_COMMAND_WINDOWS: 'cd {project} && ls -al && pwd && pytest tests'
+        # CIBW_BEFORE_TEST_WINDOWS: ls -al tests && pwd
+        CIBW_TEST_COMMAND_WINDOWS: 'ls -al && pwd && pytest tests'
         CIBW_TEST_COMMAND_MACOS: cd {project} && pytest tests
         CIBW_TEST_COMMAND_LINUX: cd {project} && pytest tests
 
