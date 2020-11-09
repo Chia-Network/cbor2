@@ -53,7 +53,7 @@ jobs:
         CIBW_TEST_REQUIRES: pytest pytest-cov
         # CIBW_BEFORE_TEST: ln -s {project}/tests tests
         CIBW_BEFORE_TEST_WINDOWS: ls -al tests && pwd
-        CIBW_TEST_COMMAND_WINDOWS: cd {package} && ls -al && pwd && pytest {project}\tests
+        CIBW_TEST_COMMAND_WINDOWS: Set-Location -Path {project} -PassThru && ls -al && pwd && pytest tests
         CIBW_TEST_COMMAND_MACOS: cd {project} && pytest tests
         CIBW_TEST_COMMAND_LINUX: cd {project} && pytest tests
 
