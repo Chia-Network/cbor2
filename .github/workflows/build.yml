@@ -52,7 +52,7 @@ jobs:
           python -m pip install --upgrade pip
         CIBW_TEST_REQUIRES: pytest pytest-cov
         # CIBW_BEFORE_TEST: ln -s {project}/tests tests
-        CIBW_BEFORE_TEST_WINDOWS: "if [ ! -f 'c:/cbor2' ]; then ln -s d:/a/cbor2/cbor2 c:/cbor2; fi"
+        CIBW_BEFORE_TEST_WINDOWS: "if [ -f 'c:/cbor2' ]; then echo 'Link exists'; else ln -s d:/a/cbor2/cbor2 c:/cbor2; fi"
         CIBW_TEST_COMMAND_WINDOWS: "cd cbor2 && pytest tests"
         CIBW_TEST_COMMAND_MACOS: cd {project} && pytest tests
         CIBW_TEST_COMMAND_LINUX: cd {project} && pytest tests
