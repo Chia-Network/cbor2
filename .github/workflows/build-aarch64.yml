@@ -55,6 +55,7 @@ jobs:
         # CIBW_BEFORE_ALL_LINUX: >
         CIBW_BEFORE_BUILD_LINUX: >
           python -m pip install --upgrade pip
+        CIBW_TEST_REQUIRES: pytest pytest-cov
         CIBW_BEFORE_TEST: mkdir {project}/tests/tests && cp {project}/tests/examples.json {project}/tests/tests/examples.json
         CIBW_TEST_COMMAND: pytest {project}/tests/
 
