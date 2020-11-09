@@ -50,7 +50,7 @@ jobs:
         CIBW_BEFORE_BUILD_WINDOWS: >
           python -m pip install --upgrade pip
         CIBW_TEST_REQUIRES: pytest pytest-cov
-        CIBW_TEST_COMMAND: pytest -v
+        CIBW_TEST_COMMAND: pytest tests -v
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
