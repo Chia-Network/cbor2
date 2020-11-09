@@ -56,9 +56,6 @@ jobs:
         CIBW_BEFORE_BUILD_LINUX: >
           python -m pip install --upgrade pip
         CIBW_TEST_REQUIRES: pytest pytest-cov
-        CIBW_BEFORE_TEST_WINDOWS: ls -al && ls -al {project}
-        CIBW_TEST_COMMAND_WINDOWS: cd {project}\cbor2 && pytest tests
-        CIBW_TEST_COMMAND_MACOS: cd {project} && pytest tests
         CIBW_TEST_COMMAND_LINUX: cd {project} && pytest tests
 
     - name: Upload artifacts
