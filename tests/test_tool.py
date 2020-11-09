@@ -118,8 +118,8 @@ def test_embed_bytes(monkeypatch, tmpdir):
     sys.version_info < (3, 3), reason="Requires CPython > 3.3"
 )
 def test_dtypes_from_file(monkeypatch, tmpdir):
-    infile = 'examples.cbor.b64'
-    expected = open('examples.json', 'r').read()
+    infile = 'tests/examples.cbor.b64'
+    expected = open('tests/examples.json', 'r').read()
     outfile = tmpdir.join('outfile.json')
     argv = ['--sort-keys', '--pretty', '-d', '-o', str(outfile), infile]
     with monkeypatch.context() as m:
