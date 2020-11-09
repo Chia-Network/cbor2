@@ -49,7 +49,7 @@ jobs:
         CIBW_ENVIRONMENT_MACOS: MACOSX_DEPLOYMENT_TARGET=10.14
         CIBW_BEFORE_BUILD_WINDOWS: >
           python -m pip install --upgrade pip
-        CIBW_TEST_REQUIRES: pytest pytest-cov
+        CIBW_TEST_REQUIRES: pytest pytest-cov coveralls
         CIBW_TEST_COMMAND: pytest -v {project}/tests
 
     - name: Upload artifacts
